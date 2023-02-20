@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UrlBackProvider } from './services/projet-back.service';
+import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProjetsListeurComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,HttpClientModule
   ],
-  providers: [],
+  providers: [UrlBackProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

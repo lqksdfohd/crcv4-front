@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { UrlBackProvider } from './services/projet-back.service';
 import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.component';
 import { ProjetAfficheurComponent } from './projet-afficheur/projet-afficheur.component';
+import { ProjetCreateurComponent } from './projet-createur/projet-createur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjetsListeurComponent,
-    ProjetAfficheurComponent
+    ProjetAfficheurComponent,
+    ProjetCreateurComponent
   ],
   imports: [
     BrowserModule,

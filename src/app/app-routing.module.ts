@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.component';
+import { ProjetAfficheurComponent } from './projet-afficheur/projet-afficheur.component';
+import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.component'
 
 const routes: Routes = [
-  {path:'projets/liste', component:ProjetsListeurComponent}
+  {path:'projets/liste', component:ProjetsListeurComponent},
+  {path:'projet/:id', component:ProjetAfficheurComponent}
 ];
 
 @NgModule({

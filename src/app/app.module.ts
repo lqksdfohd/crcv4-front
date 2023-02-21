@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UrlBackProvider } from './services/projet-back.service';
 import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.component';
+import { ProjetAfficheurComponent } from './projet-afficheur/projet-afficheur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjetsListeurComponent
+    ProjetsListeurComponent,
+    ProjetAfficheurComponent
   ],
   imports: [
     BrowserModule,

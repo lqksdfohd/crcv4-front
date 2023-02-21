@@ -1,0 +1,18 @@
+<div id="container-afficher-projet">
+    <div class="flex-center" id="titre-projet">{{projetAAfficher?.nom}}</div>
+    <div id="klasses" class="espacement">
+        <div *ngFor="let klass of projetAAfficher?.listeKlass" class="espacement" id="unite-klass">
+            <div class="flex-center" id="nom-klass">{{klass.nom}}</div>
+            <div id="items">
+                <div class="mise-en-form-items espacement" id="responsabilites">
+                    <p>responsabilite 1</p>
+                    <p>responsabilite 2</p>
+                    <p>responsabilite 3</p>
+                </div>
+                <div class="mise-en-form-items espacement" id="collaborateurs">
+                    <p>col 1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

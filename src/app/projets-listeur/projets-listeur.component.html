@@ -1,5 +1,5 @@
 <div id="container-liste-projets">
-    <div *ngFor="let projet of listeProjets" id="unite-projet">
+    <div (click)="naviguerVersUnProjet(projet.id)" *ngFor="let projet of listeProjets" id="unite-projet">
         {{projet.nom}}
     </div>
 </div>

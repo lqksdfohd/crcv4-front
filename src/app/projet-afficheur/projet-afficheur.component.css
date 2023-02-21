@@ -1,0 +1,64 @@
+div#container-afficher-projet{
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    padding: 0.5rem;
+}
+
+div#titre-projet{
+    grid-row: 1/2;
+    align-items: center;
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+div#klasses{
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-evenly;
+}
+.espacement{
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+div#unite-klass{
+    flex: 0 1 25rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+}
+
+div#nom-klass{
+    font-weight: 300;
+    font-size: larger;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+div#items{
+    display: flex;
+    justify-content: space-evenly;
+    width: inherit;
+}
+
+div#responsabilites{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+div#collaborateurs{
+    width: 28%;
+}
+
+.mise-en-form-items{
+    padding: 1%;
+    box-sizing: border-box;
+    border: solid black 1px;
+}
+

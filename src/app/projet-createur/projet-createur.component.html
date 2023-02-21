@@ -1,1 +1,9 @@
-<p>projet-createur works!</p>
+<div id="container-creer-projet">
+    <div id="unite-input">
+        <label for="nom-projet"> nom du projet à créer</label>
+        <input type="text" #nomProjet>
+    </div>
+    <div id="unite-validation">
+        <button (click)="creerProjet(nomProjet.value)">valider</button>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProjetSimpleDto } from '../dtos/projet-simple.dto';
 import { ProjetBackService } from '../services/projet-back.service';
 import { Observer } from 'rxjs';
+import { GestionnaireErreursService } from '../gestionnaire-erreurs/gestionnaire-erreurs.service';
 
 @Component({
   selector: 'app-projet-createur',
@@ -11,7 +12,8 @@ import { Observer } from 'rxjs';
 })
 export class ProjetCreateurComponent implements OnInit {
 
-  constructor(private projetBackService:ProjetBackService, private router:Router) { }
+  constructor(private projetBackService:ProjetBackService, private router:Router,
+  private gestionnaireErreurs:GestionnaireErreursService) { }
 
   ngOnInit(): void {
   }
@@ -23,10 +25,13 @@ export class ProjetCreateurComponent implements OnInit {
       next: (dto) =>{
         this.router.navigate(['projet', dto.id]);
       },
-      error: erreur => {console.log(erreur)},
+      error: erreur => {
+        this.gestionnaireErreurs.setErreur(erreur.error);
+        console.log(erreur.error);
+      },
       complete: () => {}
     }
-    
+
     const projet:ProjetSimpleDto = new ProjetSimpleDto(nomProjet);
     this.projetBackService.creerUnProjet(projet).subscribe(observeurCreerProjet);
   }

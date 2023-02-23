@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core'
 
 
 @Injectable({providedIn: 'root'})
+/**
+ * Service permettant d'afficher une erreur à l'utilisateur de l'application
+ */
 export class GestionnaireErreursService{
     obsGestionnaireErreurs:Subject<ErreurModel> = new Subject();
 

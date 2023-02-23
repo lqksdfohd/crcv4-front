@@ -1,0 +1,22 @@
+div#container-erreur{
+    width: 45vw;
+    background-color: salmon;
+    height: vh;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: solid 2px white;
+}
+
+div#logique{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+div#donnees{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    justify-content: space-evenly;
+
+}

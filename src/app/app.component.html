@@ -6,6 +6,9 @@
     </ul>
   </nav>
   <div class="solid-border" id="affichage-composants">
+    <div id="affichage-erreurs" *ngIf="affichageErreurComposant">
+      <app-gestionnaire-erreurs [erreurModel]="erreurModel"></app-gestionnaire-erreurs>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </div>

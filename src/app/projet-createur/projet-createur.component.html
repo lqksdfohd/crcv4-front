@@ -1,9 +1,13 @@
-<div id="container-creer-projet">
-    <div id="unite-input">
-        <label for="nom-projet"> nom du projet à créer</label>
-        <input type="text" #nomProjet>
+<div class="espacement largeur" id="container-creer-projet">
+    <div id="titre-container">Créer un projet</div>
+    <div id="items">
+        <div id="unite-input">
+            <label for="nom-projet"> nom du projet à créer</label>
+            <input type="text" #nomProjet>
+        </div>
+        <div id="unite-validation">
+            <button (click)="creerProjet(nomProjet.value)">valider</button>
+        </div>
     </div>
-    <div id="unite-validation">
-        <button (click)="creerProjet(nomProjet.value)">valider</button>
-    </div>
+    
 </div>

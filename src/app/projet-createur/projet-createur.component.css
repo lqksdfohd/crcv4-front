@@ -1,0 +1,37 @@
+div#container-creer-projet{
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr;
+    height: 100%;
+}
+
+.espacement{
+    padding: 0.5rem;
+}
+
+div#titre-container{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    align-items: center;
+}
+
+div#items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    border: 1px solid;
+}
+
+div#unite-input{
+    display: flex;
+    justify-content: space-between;
+}
+
+div#unite-validation{
+    display: flex;
+    justify-content: flex-end;
+}
+.largeur{
+    width: 30rem;
+}

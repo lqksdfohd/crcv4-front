@@ -3,6 +3,7 @@ import { Inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ProjetCompletDto } from "../dtos/projet-complet.dto";
 import { ProjetSimpleDto } from "../dtos/projet-simple.dto";
+import { ProjetModel } from "../models/projet.model";
 
 export const UrlBackProvider = [{provide:"URL_BACK", useValue: 'http://localhost:8080/'}]
 
@@ -18,5 +19,10 @@ export class ProjetBackService{
     recupererProjetParId(id:string):Observable<ProjetCompletDto>{
         const url = this.urlBack.concat(`projet/${id}`);
         return this.http.get<ProjetCompletDto>(url);
+    }
+
+    creerUnProjet(projet:ProjetSimpleDto){
+        const url = this.urlBack.concat('projet/');
+        return this.http.post<ProjetSimpleDto>(url,projet);
     }
 }

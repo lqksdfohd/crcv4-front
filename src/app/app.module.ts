@@ -9,13 +9,15 @@ import { UrlBackProvider } from './services/projet-back.service';
 import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.component';
 import { ProjetAfficheurComponent } from './projet-afficheur/projet-afficheur.component';
 import { ProjetCreateurComponent } from './projet-createur/projet-createur.component';
+import { GestionnaireErreursComponent } from './gestionnaire-erreurs/gestionnaire-erreurs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjetsListeurComponent,
     ProjetAfficheurComponent,
-    ProjetCreateurComponent
+    ProjetCreateurComponent,
+    GestionnaireErreursComponent
   ],
   imports: [
     BrowserModule,

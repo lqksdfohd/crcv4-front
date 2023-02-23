@@ -1,1 +1,11 @@
-<p>gestionnaire-erreurs works!</p>
+
+<div id="container-erreur">
+    <div id="donnees">
+        <div id="raison">{{erreurModel?.error}}</div>
+        <div class="code">{{erreurModel?.status}}</div>
+    </div>
+    <div id="logique">
+        <div id="valider" (click)="validerLectureErreur()">ok</div>
+    </div>
+    
+</div>

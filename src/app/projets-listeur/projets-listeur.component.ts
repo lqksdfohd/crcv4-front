@@ -4,6 +4,7 @@ import { Observer } from 'rxjs'
 import { ProjetSimpleDto } from '../dtos/projet-simple.dto';
 import { ProjetModel } from '../models/projet.model';
 import { Router } from '@angular/router';
+import { GestionnaireErreursService } from '../gestionnaire-erreurs/gestionnaire-erreurs.service';
 
 @Component({
   selector: 'app-projets-listeur',
@@ -15,7 +16,8 @@ export class ProjetsListeurComponent implements OnInit {
   /**la liste des projets parmis lesquels on choisie celui à ouvrir*/
   listeProjets:ProjetModel[] = [];
 
-  constructor(private projetBackService:ProjetBackService, private router:Router) { }
+  constructor(private projetBackService:ProjetBackService, private router:Router,
+  private gestionnaireErreurs:GestionnaireErreursService) { }
 
   ngOnInit(): void {
     /* construit une liste de projets, parmis lesquelles on choisi le projet à ouvrir */
@@ -27,7 +29,7 @@ export class ProjetsListeurComponent implements OnInit {
           return projet;
         });
       },
-      error: erreur => {},
+      error: erreur => {this.gestionnaireErreurs.setErreur(erreur.error)},
       complete: () =>{}
     }
 

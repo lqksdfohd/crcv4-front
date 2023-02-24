@@ -27,7 +27,6 @@ export class ProjetCreateurComponent implements OnInit {
       },
       error: erreur => {
         this.gestionnaireErreurs.setErreur(erreur.error);
-        console.log(erreur.error);
       },
       complete: () => {}
     }

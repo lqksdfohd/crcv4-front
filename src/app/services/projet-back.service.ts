@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { KlassCompletDto } from "../dtos/klass-complet.dto";
 import { ProjetCompletDto } from "../dtos/projet-complet.dto";
 import { ProjetSimpleDto } from "../dtos/projet-simple.dto";
 import { ProjetModel } from "../models/projet.model";
@@ -24,5 +25,10 @@ export class ProjetBackService{
     creerUnProjet(projet:ProjetSimpleDto){
         const url = this.urlBack.concat('projet/');
         return this.http.post<ProjetSimpleDto>(url,projet);
+    }
+
+    ajouterUneKlassAuProjet(idProjet:string, klass:KlassCompletDto){
+        const url = this.urlBack.concat(`projet/${idProjet}/klass`);
+        return this.http.post<KlassCompletDto>(url, klass);
     }
 }

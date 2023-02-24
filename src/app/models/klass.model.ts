@@ -16,7 +16,12 @@ export class KlassModel{
             const r = new ResponsabiliteModel();
             r.initAvecResponsabiliteDto(dto);
             return r;
-        })
+        });
+        this.listeCollaborateurs = dto.listeCollaborateurs.map(dto => { 
+            const c = new CollaborateurModel();
+            c.initAvecCollaborateurDto(dto);
+            return c;
+         })
     }
 
     initAvecKlassSimpleDto(dto:KlassSimpleDto){

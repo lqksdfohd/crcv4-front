@@ -23,7 +23,7 @@ div#klasses{
 }
 
 div#unite-klass{
-    flex: 0 1 25rem;
+    flex: 0 1 35rem;
     display: flex;
     flex-direction: column;
     border: solid 1px black;
@@ -46,14 +46,18 @@ div#items{
 }
 
 div#responsabilites{
-    width: 70%;
+    width: 65%;
     display: flex;
     flex-direction: column;
+    margin-right: auto;
     
 }
 
 div#collaborateurs{
     width: 28%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .mise-en-form-items{

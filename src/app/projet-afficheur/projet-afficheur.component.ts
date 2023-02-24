@@ -6,6 +6,7 @@ import { ProjetService } from './service/projet.service';
 import { Observer } from 'rxjs';
 import { ProjetCompletDto } from '../dtos/projet-complet.dto';
 import { GestionnaireErreursService } from '../gestionnaire-erreurs/gestionnaire-erreurs.service';
+import { KlassModel } from '../models/klass.model';
 
 @Component({
   selector: 'app-projet-afficheur',
@@ -37,6 +38,11 @@ export class ProjetAfficheurComponent implements OnInit {
     }
     /* on construit le projet à afficher à partir de la dto du projet complet */
     this.projetBackService.recupererProjetParId(this.idProjet).subscribe(observeurRecupProjet);
+  }
+
+  miseEnFormCollaborateurs(klass:KlassModel):string{
+    const resultat = klass.listeCollaborateurs.map(c => c.collaborant?.nom).join('\n');
+    return resultat;
   }
 
 }

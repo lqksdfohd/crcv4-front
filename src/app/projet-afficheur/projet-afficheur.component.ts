@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjetModel } from '../models/projet.model';
 import { ProjetBackService } from '../services/projet-back.service';
 import { ProjetService } from './service/projet.service';
@@ -20,7 +20,8 @@ export class ProjetAfficheurComponent implements OnInit {
   projetAAfficher:ProjetModel|undefined;
 
   constructor(private activatedRoute:ActivatedRoute, private projetBackService:ProjetBackService,
-  private projetService:ProjetService, private gestionnaireDErreurs:GestionnaireErreursService) {
+  private projetService:ProjetService, private gestionnaireDErreurs:GestionnaireErreursService,
+  private router:Router) {
     this.activatedRoute.params.subscribe(params => this.idProjet = params['id']);
   }
 
@@ -40,9 +41,14 @@ export class ProjetAfficheurComponent implements OnInit {
     this.projetBackService.recupererProjetParId(this.idProjet).subscribe(observeurRecupProjet);
   }
 
+  /** permet d'afficher la liste des collaborants de cette klass comme une liste de nom de klass */
   miseEnFormCollaborateurs(klass:KlassModel):string{
     const resultat = klass.listeCollaborateurs.map(c => c.collaborant?.nom).join('\n');
     return resultat;
+  }
+
+  navVersCreerKlass(){
+    this.router.navigate(['projet', this.idProjet, 'creer']);
   }
 
 }

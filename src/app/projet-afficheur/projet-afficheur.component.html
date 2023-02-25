@@ -1,16 +1,21 @@
 <div id="container-afficher-projet">
     <div class="flex-center" id="titre-projet">{{projetAAfficher?.nom}}</div>
     <div id="klasses" class="espacement">
-        <div *ngFor="let klass of projetAAfficher?.listeKlass" class="espacement" id="unite-klass">
-            <div class="flex-center" id="nom-klass">{{klass.nom}}</div>
-            <div id="items">
-                <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement" id="responsabilites">
-                    <p>{{r.titre}}</p>
-                </div>
-                <div *ngIf="miseEnFormCollaborateurs(klass)"  class="mise-en-form-items espacement" id="collaborateurs">
-                    <span>{{miseEnFormCollaborateurs(klass)}}</span>
+        <div class="container-klass" *ngFor="let klass of projetAAfficher?.listeKlass">
+            <div class="espacement" id="unite-klass">
+                <div class="flex-center" id="nom-klass">{{klass.nom}}</div>
+                <div id="items">
+                    <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement"
+                        id="responsabilites">
+                        <p>{{r.titre}}</p>
+                    </div>
+                    <div *ngIf="miseEnFormCollaborateurs(klass)" class="mise-en-form-items espacement"
+                        id="collaborateurs">
+                        <span>{{miseEnFormCollaborateurs(klass)}}</span>
+                    </div>
                 </div>
             </div>
+
         </div>
         <div class="flex-center espacement">
             <div id="creer-klass" (click)="navVersCreerKlass()">créer nouvelle classe</div>

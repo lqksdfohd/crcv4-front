@@ -24,11 +24,6 @@ div#klasses{
     margin: 0.5rem;
 }
 
-div.container-klass{
-    display: flex;
-    justify-content: center;
-}
-
 div#unite-klass{
     flex: 0 1 25rem;
     display: flex;

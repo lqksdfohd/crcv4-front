@@ -1,11 +1,12 @@
 <div id="container-klass-createur">
-    <div id="formulaire">
-        <div id="unite-formulaire">
+    <div id="titre">Créer une Classe</div>
+    <main class="espacement formulaire">
+        <div class="unite-formulaire">
             <label for="nom-klass">nom de la classe à créer</label>
             <input type="text" id="nom-klass" #nomKlass>
         </div>
-        <div id="unite-logique">
+        <div class="unite-logique">
             <button (click)="creerKlass(nomKlass.value)">créer classe</button>
         </div>
-    </div>
+    </main>
 </div>

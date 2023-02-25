@@ -1,0 +1,36 @@
+div#container-klass-createur{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+}
+
+div#titre{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.espacement{
+    margin: 0.5rem;
+}
+
+.formulaire{
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border: solid 1px black;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+div.unite-formulaire{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+div.unite-logique{
+    margin-left: auto;
+}

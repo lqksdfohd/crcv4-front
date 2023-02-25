@@ -1,7 +1,6 @@
 div#container-creer-projet{
-    display: grid;
-    grid-template-rows: 1fr 1fr 5fr;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .espacement{
@@ -13,9 +12,10 @@ div#titre-container{
     justify-content: center;
     font-size: xx-large;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
-div#items{
+div#formulaire{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -23,12 +23,13 @@ div#items{
     border: 1px solid;
 }
 
-div#unite-input{
+div#unite-formulaire{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
 }
 
-div#unite-validation{
+div#unite-logique{
     display: flex;
     justify-content: flex-end;
 }

@@ -10,6 +10,7 @@ import { ProjetsListeurComponent } from './projets-listeur/projets-listeur.compo
 import { ProjetAfficheurComponent } from './projet-afficheur/projet-afficheur.component';
 import { ProjetCreateurComponent } from './projet-createur/projet-createur.component';
 import { GestionnaireErreursComponent } from './gestionnaire-erreurs/gestionnaire-erreurs.component';
+import { KlassAfficheurComponent } from './projet-afficheur/klass-afficheur/klass-afficheur.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GestionnaireErreursComponent } from './gestionnaire-erreurs/gestionnair
     ProjetsListeurComponent,
     ProjetAfficheurComponent,
     ProjetCreateurComponent,
-    GestionnaireErreursComponent
+    GestionnaireErreursComponent,
+    KlassAfficheurComponent
   ],
   imports: [
     BrowserModule,

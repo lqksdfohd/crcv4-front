@@ -41,12 +41,6 @@ export class ProjetAfficheurComponent implements OnInit {
     this.projetBackService.recupererProjetParId(this.idProjet).subscribe(observeurRecupProjet);
   }
 
-  /** permet d'afficher la liste des collaborants de cette klass comme une liste de nom de klass */
-  miseEnFormCollaborateurs(klass:KlassModel):string{
-    const resultat = klass.listeCollaborateurs.map(c => c.collaborant?.nom).join('\n');
-    return resultat;
-  }
-
   navVersCreerKlass(){
     this.router.navigate(['projet', this.idProjet, 'creer']);
   }

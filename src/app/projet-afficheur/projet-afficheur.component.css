@@ -31,42 +31,18 @@ div#unite-klass{
     border: solid 1px black;
 }
 
-div#nom-klass{
-    font-weight: 300;
-    font-size: larger;
-}
+
 
 .flex-center{
     display: flex;
     justify-content: center;
 }
 
-div#items{
-    display: flex;
-    justify-content: space-evenly;
-    width: inherit;
+div#nom-klass{
+    font-weight: 300;
+    font-size: larger;
 }
 
-div#responsabilites{
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-    
-}
-
-div#collaborateurs{
-    width: 28%;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
-
-.mise-en-form-items{
-    padding: 1%;
-    box-sizing: border-box;
-    border: solid black 1px;
-}
 
 div#creer-klass{
     height: 5rem;

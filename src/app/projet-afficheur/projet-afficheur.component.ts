@@ -27,12 +27,21 @@ export class ProjetAfficheurComponent implements OnInit {
 
   ngOnInit(): void {
 
+    /* permet de mettre à jour l'écran "afficher projet"  à partir de projetService */
+    const observeurProjet:Observer<ProjetModel> = {
+      next: projet => { this.projetAAfficher = projet},
+      error: erreur => { this.gestionnaireDErreurs.setErreur(erreur.error)},
+      complete: () => {}
+    }
+
+    this.projetService.ajouterUnObserveur(observeurProjet);
+
+    /*permet de récuperer le projet à partir du back*/
     const observeurRecupProjet:Observer<ProjetCompletDto> = {
       next: p => {
         let projetModel:ProjetModel = new ProjetModel();
         projetModel.initAvecProjetDtoComplet(p);
-        this.projetService.setProjet(projetModel);
-        this.projetAAfficher = this.projetService.getProjet();      
+        this.projetService.setProjet(projetModel);      
       },
       error: erreur => {this.gestionnaireDErreurs.setErreur(erreur.error)},
       complete: () => {}

@@ -37,8 +37,10 @@ export class KlassAfficheurComponent implements OnInit {
     const observer:Observer<Object> = {
       //si la klass est bien supprimée du projet
       next: reponse => {
-        const projetId = this.projetService.getProjet().id;
-        this.router.navigate(["projet", projetId]);
+        const projet = this.projetService.getProjet();
+        const liste = projet.listeKlass?.filter(k  => k.id != this.klass.id);
+        projet.listeKlass = liste;
+        this.projetService.setProjet(projet);
       }, 
       //s'il y a une erreur lors de la suppression
       error: erreur => { this.gestionErreursService.setErreur(erreur.error)},

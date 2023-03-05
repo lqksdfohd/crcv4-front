@@ -33,3 +33,11 @@ div.flex-center{
 div.espacement{
     margin: 0.5rem;
 }
+
+div.a-supprimer{
+    font-weight: bolder;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: tomato;
+}

@@ -15,9 +15,13 @@ export class KlassAfficheurComponent implements OnInit {
 
   @Input()
   klass:KlassModel;
+
+  aSupprimer:boolean;
+
   constructor(private projetBackService:ProjetBackService, private router:Router, private projetService:ProjetService,
     private gestionErreursService:GestionnaireErreursService) {
     this.klass = new KlassModel();
+    this.aSupprimer = false;
   }
 
   ngOnInit(): void {
@@ -41,6 +45,15 @@ export class KlassAfficheurComponent implements OnInit {
       complete: () => {}
     }
     this.projetBackService.supprimerUneKlassDuProjet(this.klass.id as number).subscribe(observer);
+  }
+
+
+  afficherOngletASupprimer(){
+    this.aSupprimer = true;
+  }
+
+  enleverOngletASupprimer(){
+    setTimeout( () => {this.aSupprimer = false}, 2000);
   }
 
 }

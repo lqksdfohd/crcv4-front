@@ -33,7 +33,7 @@ export class ProjetBackService{
     }
 
     supprimerUneKlassDuProjet(idKlass:number){
-        const url = this.urlBack.concat(`/projet/klass/${idKlass}`);
+        const url = this.urlBack.concat(`projet/klass/${idKlass}`);
         return this.http.delete(url);
     }
 }

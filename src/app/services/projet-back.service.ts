@@ -31,4 +31,9 @@ export class ProjetBackService{
         const url = this.urlBack.concat(`projet/${idProjet}/klass`);
         return this.http.post<KlassCompletDto>(url, klass);
     }
+
+    supprimerUneKlassDuProjet(idKlass:number){
+        const url = this.urlBack.concat(`/projet/klass/${idKlass}`);
+        return this.http.delete(url);
+    }
 }

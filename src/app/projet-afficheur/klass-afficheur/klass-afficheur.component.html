@@ -1,1 +1,11 @@
-<p>klass-afficheur works!</p>
+<div id="container-klass-afficheur">
+    <div class="flex-center" id="nom-klass">{{klass.nom}}</div>
+    <div id="items">
+        <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement" id="responsabilites">
+            <p>{{r.titre}}</p>
+        </div>
+        <div *ngIf="miseEnFormCollaborateurs()" class="mise-en-form-items espacement" id="collaborateurs">
+            <span>{{miseEnFormCollaborateurs()}}</span>
+        </div>
+    </div>
+</div>

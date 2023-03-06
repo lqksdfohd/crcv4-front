@@ -16,12 +16,12 @@ export class KlassAfficheurComponent implements OnInit {
   @Input()
   klass:KlassModel;
 
-  aSupprimer:boolean;
+  aModifier:boolean;
 
   constructor(private projetBackService:ProjetBackService, private router:Router, private projetService:ProjetService,
     private gestionErreursService:GestionnaireErreursService) {
     this.klass = new KlassModel();
-    this.aSupprimer = false;
+    this.aModifier = false;
   }
 
   ngOnInit(): void {
@@ -50,12 +50,16 @@ export class KlassAfficheurComponent implements OnInit {
   }
 
 
-  afficherOngletASupprimer(){
-    this.aSupprimer = true;
+  afficherOngletAModifier(){
+    this.aModifier = true;
   }
 
-  enleverOngletASupprimer(){
-    setTimeout( () => {this.aSupprimer = false}, 2000);
+  enleverOngletAModifier(){
+    setTimeout( () => {this.aModifier = false}, 2000);
+  }
+
+  navVersModifierKlass(){
+    this.router.navigate(['klass', this.klass.id, 'modifier']);
   }
 
 }

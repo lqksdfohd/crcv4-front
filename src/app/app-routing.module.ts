@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'projet/nouveau', component:ProjetCreateurComponent},
   {path:'projet/:id', component:ProjetAfficheurComponent},
   {path: 'projet/:id/creer', component:KlassCreateurComponent},
-  {path: 'projet/:id/modifier-klass/:idKlass', component:KlassModifieurComponent}
+  {path: 'klass/:id/modifier', component:KlassModifieurComponent}
 ];
 
 @NgModule({

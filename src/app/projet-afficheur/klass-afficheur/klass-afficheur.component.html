@@ -1,5 +1,9 @@
-<div id="container-klass-afficheur" (mouseover)="afficherOngletASupprimer()" (mouseleave)="enleverOngletASupprimer()">
-    <div class="a-supprimer" (click)="supprimerKlass()" *ngIf="aSupprimer">supprimer</div>
+<div id="container-klass-afficheur" (mouseover)="afficherOngletAModifier()" (mouseleave)="enleverOngletAModifier()">
+    <div class="logique" *ngIf="aModifier">
+        <div class="a-modifier" (click)="navVersModifierKlass()">modifier</div>
+        <div class="a-supprimer" (click)="supprimerKlass()">supprimer</div>
+    </div>
+    
     <div class="flex-center" id="nom-klass">{{klass.nom}}</div>
     <div id="items">
         <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement" id="responsabilites">

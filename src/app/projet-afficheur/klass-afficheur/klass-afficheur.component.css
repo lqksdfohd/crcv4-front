@@ -34,10 +34,24 @@ div.espacement{
     margin: 0.5rem;
 }
 
+div.logique{
+    display: flex;
+}
+
+div.a-modifier{
+    margin-right: auto;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(72, 72, 243);
+}
+
 div.a-supprimer{
+    margin-left: auto;
+    flex: 1 1 0;
     font-weight: bolder;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     background-color: tomato;
 }

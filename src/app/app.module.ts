@@ -11,6 +11,7 @@ import { ProjetAfficheurComponent } from './projet-afficheur/projet-afficheur.co
 import { ProjetCreateurComponent } from './projet-createur/projet-createur.component';
 import { GestionnaireErreursComponent } from './gestionnaire-erreurs/gestionnaire-erreurs.component';
 import { KlassAfficheurComponent } from './projet-afficheur/klass-afficheur/klass-afficheur.component';
+import { KlassModifieurComponent } from './klass-modifieur/klass-modifieur.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { KlassAfficheurComponent } from './projet-afficheur/klass-afficheur/klas
     ProjetAfficheurComponent,
     ProjetCreateurComponent,
     GestionnaireErreursComponent,
-    KlassAfficheurComponent
+    KlassAfficheurComponent,
+    KlassModifieurComponent
   ],
   imports: [
     BrowserModule,

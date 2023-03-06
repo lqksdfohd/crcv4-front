@@ -36,4 +36,8 @@ export class ProjetBackService{
         const url = this.urlBack.concat(`projet/klass/${idKlass}`);
         return this.http.delete(url);
     }
+    recupererUneKlassDuProjet(klassId:string):Observable<KlassCompletDto>{
+        const url = this.urlBack.concat(`klass/${klassId}`);
+        return this.http.get<KlassCompletDto>(url);
+    }
 }

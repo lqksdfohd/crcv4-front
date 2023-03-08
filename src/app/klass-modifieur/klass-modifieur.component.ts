@@ -8,6 +8,7 @@ import { KlassModel } from '../models/klass.model';
 import { ResponsabiliteModel } from '../models/responsabilite.model';
 import { ProjetService } from '../projet-afficheur/service/projet.service';
 import { ProjetBackService } from '../services/projet-back.service';
+import { KlassValidateur } from './validateurs/klass.validateur';
 
 @Component({
   selector: 'app-klass-modifieur',
@@ -22,13 +23,13 @@ export class KlassModifieurComponent implements OnInit {
 
   constructor(private activatedRoute:ActivatedRoute, private projetBackService:ProjetBackService,
   private gestionnaireErreurs:GestionnaireErreursService, private projetService:ProjetService,
-  private router:Router) {
+  private router:Router, private klassValidateur:KlassValidateur) {
     this.activatedRoute.params.subscribe(params => {this.klassId = params['id']});
     this.form = new FormGroup({
       r0: new FormControl(''),
       r1: new FormControl(''),
       r2: new FormControl(''),
-      c1: new FormControl('')
+      c1: new FormControl('', klassValidateur.collaborateursValidateur())
     });
   }
 
@@ -47,9 +48,7 @@ export class KlassModifieurComponent implements OnInit {
   }
 
   initialiserForm(klass:KlassModel){
-    /*this.form = new FormGroup({});*/
-    let validateursResponsabilite:ValidatorFn[] = [];
-    let validateursCollaborateur:ValidatorFn[] = [];
+
     let value = this.form.getRawValue();
     let i = 0;
     for(let _item of Object.keys(value)){

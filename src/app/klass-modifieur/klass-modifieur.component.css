@@ -58,3 +58,7 @@ div#bt-valider{
 .solid-border{
     border: solid 1px black;
 }
+
+.ng-invalid{
+    background-color: salmon;
+}

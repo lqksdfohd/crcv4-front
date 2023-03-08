@@ -1,25 +1,29 @@
 <div id="container-modifier-klass">
-    <form [formGroup]="form">
-        <div id="entres">
-            <div id="liste-responsabilites">
+    <form class="flex-col" [formGroup]="form">
+        <div class="flex-row">
+            <div class="liste-responsabilites flex-col d-border">
                 <div class="titre">les responsabilites</div>
-                <div class="unite-form-responsabilite">
+                <div class="flex-row d-border spe-responsabilite">
                     <textarea formControlName="r0"></textarea>
                 </div>
-                <div class="unite-form-responsabilite">
+                <div class="flex-row d-border spe-responsabilite">
                     <textarea formControlName="r1"></textarea>
                 </div>
-                <div class="unite-form-responsabilite">
+                <div class="flex-row d-border spe-responsabilite">
                     <textarea formControlName="r2"></textarea>
                 </div>
             </div>
-            <div class="liste-collaborants">
+            <div class="liste-collaborants flex-col d-border">
                 <div class="titre">les collaborateurs</div>
-                <textarea formControlName="c1"></textarea>
+                <div class="flex-row d-border spe-collaborateur">
+                    <textarea formControlName="c1"></textarea>
+                </div>
+                
             </div>
         </div>
-        <div id="logique">
-            <button>valider</button>
+        <div class="flex-row" id="logique">
+            <div class="solid-border" id="bt-annuler">annuler</div>
+            <div class="solid-border" id="bt-valider">valider</div>
         </div>
 
     </form>

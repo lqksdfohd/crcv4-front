@@ -24,6 +24,7 @@ export class KlassModifieurComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute, private projetBackService:ProjetBackService,
   private gestionnaireErreurs:GestionnaireErreursService, private projetService:ProjetService,
   private router:Router, private klassValidateur:KlassValidateur) {
+    
     this.activatedRoute.params.subscribe(params => {this.klassId = params['id']});
     this.form = new FormGroup({
       r0: new FormControl(''),
@@ -48,7 +49,7 @@ export class KlassModifieurComponent implements OnInit {
   }
 
   initialiserForm(klass:KlassModel){
-
+    //compléter la partie responsabilite du formulaire.
     let value = this.form.getRawValue();
     let i = 0;
     for(let _item of Object.keys(value)){
@@ -58,6 +59,7 @@ export class KlassModifieurComponent implements OnInit {
       }      
     }
 
+    //remplir la partie collaborateur du formulaire.
     let collaborants = klass.listeCollaborateurs.map(c => c.collaborant?.nom).join(',');
     if(collaborants){
       value['c1'] = collaborants;
@@ -66,6 +68,9 @@ export class KlassModifieurComponent implements OnInit {
     this.form.setValue(value);
   }
 
+/**
+ * permet d'annuler la modification en cours sur la klass et de retourner à l'affichage du projet.
+ */
   retournerVersAfficherProjet(){
     const projetId = this.projetService.getProjet().id;
     this.router.navigate(['projet', projetId]);

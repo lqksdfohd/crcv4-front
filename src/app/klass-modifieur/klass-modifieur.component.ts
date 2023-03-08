@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup, ValidatorFn } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observer } from 'rxjs';
 import { KlassCompletDto } from '../dtos/klass-complet.dto';
 import { GestionnaireErreursService } from '../gestionnaire-erreurs/gestionnaire-erreurs.service';
 import { KlassModel } from '../models/klass.model';
 import { ResponsabiliteModel } from '../models/responsabilite.model';
+import { ProjetService } from '../projet-afficheur/service/projet.service';
 import { ProjetBackService } from '../services/projet-back.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class KlassModifieurComponent implements OnInit {
   form:FormGroup;
 
   constructor(private activatedRoute:ActivatedRoute, private projetBackService:ProjetBackService,
-  private gestionnaireErreurs:GestionnaireErreursService) {
+  private gestionnaireErreurs:GestionnaireErreursService, private projetService:ProjetService,
+  private router:Router) {
     this.activatedRoute.params.subscribe(params => {this.klassId = params['id']});
     this.form = new FormGroup({
       r0: new FormControl(''),
@@ -65,13 +67,8 @@ export class KlassModifieurComponent implements OnInit {
     this.form.setValue(value);
   }
 
-}
-
-export class UniteForm{
-  responsabilite:ResponsabiliteModel;
-  control:FormControl;  
-  constructor(r:ResponsabiliteModel, control:FormControl){
-    this.responsabilite = r;
-    this.control = control;
+  retournerVersAfficherProjet(){
+    const projetId = this.projetService.getProjet().id;
+    this.router.navigate(['projet', projetId]);
   }
 }

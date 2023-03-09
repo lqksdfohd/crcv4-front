@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { KlassCompletDto } from "../dtos/klass-complet.dto";
 import { ProjetCompletDto } from "../dtos/projet-complet.dto";
 import { ProjetSimpleDto } from "../dtos/projet-simple.dto";
+import { KlassModel } from "../models/klass.model";
 import { ProjetModel } from "../models/projet.model";
 
 export const UrlBackProvider = [{provide:"URL_BACK", useValue: 'http://localhost:8080/'}]
@@ -39,5 +40,10 @@ export class ProjetBackService{
     recupererUneKlassDuProjet(klassId:number):Observable<KlassCompletDto>{
         const url = this.urlBack.concat(`klass/${klassId}`);
         return this.http.get<KlassCompletDto>(url);
+    }
+
+    enregistrerUneKlassDuProjet(klass:KlassCompletDto):Observable<KlassCompletDto>{
+        const url = this.urlBack.concat('projet/klass');
+        return this.http.post<KlassCompletDto>(url, klass);
     }
 }

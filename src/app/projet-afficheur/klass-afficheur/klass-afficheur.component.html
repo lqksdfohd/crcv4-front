@@ -6,9 +6,12 @@
     
     <div class="flex-center" id="nom-klass">{{klass.nom}}</div>
     <div id="items">
-        <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement" id="responsabilites">
-            <p>{{r.titre}}</p>
+        <div id="responsabilites">
+            <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement" id="responsabilite">
+                <p>{{r.titre}}</p>
+            </div>
         </div>
+
         <div *ngIf="miseEnFormCollaborateurs()" class="mise-en-form-items espacement" id="collaborateurs">
             <span>{{miseEnFormCollaborateurs()}}</span>
         </div>

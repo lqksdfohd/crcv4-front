@@ -1,10 +1,14 @@
 <div id="container-afficher-projet">
-    <div class="flex-center" id="titre-projet">{{projetAAfficher?.nom}}</div>
-    <div id="klasses" class="espacement">
-        <div *ngFor="let klass of projetAAfficher?.listeKlass" class="espacement" id="unite-klass">
-            <app-klass-afficheur [klass]="klass"></app-klass-afficheur>
-    </div>
-    <div class="flex-center espacement">
-        <div id="creer-klass" (click)="navVersCreerKlass()">créer nouvelle classe</div>
+    <div class="flex-center titre">{{projetAAfficher?.nom}}</div>
+    <div class="flex-row-wrap">
+        <div class="flex-row-wrap  espacement">
+            <div *ngFor="let klass of projetAAfficher?.listeKlass" class="espacement solid-border" >
+                <app-klass-afficheur [klass]="klass"></app-klass-afficheur>
+            </div>
+            <div class="flex-center espacement">
+                <div class="flex-center" id="creer-klass" (click)="navVersCreerKlass()">créer nouvelle classe</div>
+            </div>
+        </div>
+        
     </div>
 </div>

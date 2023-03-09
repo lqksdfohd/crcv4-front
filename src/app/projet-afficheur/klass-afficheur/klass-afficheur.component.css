@@ -23,7 +23,6 @@ div#collaborateurs{
 }
 
 .mise-en-form-items{
-    padding: 1%;
     box-sizing: border-box;
     border: solid black 1px;
 }
@@ -63,4 +62,7 @@ div#responsabilites{
     display: flex;
     flex-direction: column;
     flex: 1 1 22.5rem;
+}
+.height-3{
+    height: 3rem;
 }

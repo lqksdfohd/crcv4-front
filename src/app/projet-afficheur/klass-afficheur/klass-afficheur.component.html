@@ -8,12 +8,12 @@
     <div id="items">
         <div id="responsabilites">
             <div *ngFor="let r of klass.listeResponsabilites" class="mise-en-form-items espacement" id="responsabilite">
-                <p>{{r.titre}}</p>
+                <span class="height-3">{{r.titre}}</span>
             </div>
         </div>
 
         <div *ngIf="miseEnFormCollaborateurs()" class="mise-en-form-items espacement" id="collaborateurs">
-            <span>{{miseEnFormCollaborateurs()}}</span>
+            <span class="height-3">{{miseEnFormCollaborateurs()}}</span>
         </div>
     </div>
 </div>

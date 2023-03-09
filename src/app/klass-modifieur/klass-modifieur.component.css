@@ -59,6 +59,6 @@ div#bt-valider{
     border: solid 1px black;
 }
 
-.ng-invalid{
+textarea.ng-invalid{
     background-color: salmon;
 }

@@ -34,7 +34,6 @@ export class KlassValidateur{
             if(dedans){
                 return null;
             }else{
-                console.log(faute);
                 return {collaborateurNonExistant: { value: faute}};
             }
         }

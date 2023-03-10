@@ -12,6 +12,7 @@ import { ProjetCreateurComponent } from './projet-createur/projet-createur.compo
 import { GestionnaireErreursComponent } from './gestionnaire-erreurs/gestionnaire-erreurs.component';
 import { KlassAfficheurComponent } from './projet-afficheur/klass-afficheur/klass-afficheur.component';
 import { KlassModifieurComponent } from './klass-modifieur/klass-modifieur.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { KlassModifieurComponent } from './klass-modifieur/klass-modifieur.compo
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule
   ],
-  providers: [UrlBackProvider],
+  providers: [UrlBackProvider, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

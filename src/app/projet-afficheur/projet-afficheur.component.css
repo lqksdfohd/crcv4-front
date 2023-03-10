@@ -6,6 +6,7 @@ div#container-afficher-projet{
 .titre{
     font-weight: 900;
     font-size: xx-large;
+    margin: 2rem;
 }
 
 .flex-row-wrap{

@@ -89,20 +89,21 @@ export class KlassModifieurComponent implements OnInit {
       complete: () => {}
     }
 
-    this.mettreAJourKlass();
-    let dto = new KlassCompletDto();
-    dto.initAvecModel(this.klassAModifier);
-    this.projetBackService.enregistrerUneKlassDuProjet(dto).subscribe(observeurSauvegardeKlass);
+    if(this.form.valid){
+      //si le form est valide on met à jour le klass et on la sauvegarde.
+      this.mettreAJourKlass();
+      let dto = new KlassCompletDto();
+      dto.initAvecModel(this.klassAModifier);
+      this.projetBackService.enregistrerUneKlassDuProjet(dto).subscribe(observeurSauvegardeKlass);
+    }
   }
 
 
   mettreAJourKlass(){
-    if(this.form.valid){
-      this.mettreAJourResponsabilite('r0',0);
-      this.mettreAJourResponsabilite('r1',1);
-      this.mettreAJourResponsabilite('r2',2);
-      this.mettreAJourCollaborateurs('c1');     
-    }
+    this.mettreAJourResponsabilite('r0',0);
+    this.mettreAJourResponsabilite('r1',1);
+    this.mettreAJourResponsabilite('r2',2);
+    this.mettreAJourCollaborateurs('c1');     
   }
 
   mettreAJourResponsabilite(nomFormControl:string, positionDansListe:number){

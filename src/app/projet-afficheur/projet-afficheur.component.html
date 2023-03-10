@@ -5,7 +5,7 @@
             <div *ngFor="let klass of projetAAfficher?.listeKlass" class="espacement solid-border" >
                 <app-klass-afficheur [klass]="klass"></app-klass-afficheur>
             </div>
-            <div class="flex-center espacement">
+            <div id="logique" class="flex-center solid-border espacement">
                 <div class="flex-center" id="creer-klass" (click)="navVersCreerKlass()">créer nouvelle classe</div>
             </div>
         </div>

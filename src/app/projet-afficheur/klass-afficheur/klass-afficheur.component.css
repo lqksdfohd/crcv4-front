@@ -9,7 +9,7 @@ div#items{
 }
 
 div#responsabilite{
-    width: 90%;
+    width: 21rem;
     display: flex;
     flex-direction: column;
     margin-right: auto;
@@ -17,7 +17,7 @@ div#responsabilite{
 }
 
 div#collaborateurs{
-    width: 28%;
+    width: 7.5rem;
     margin-left: auto;
     display: flex;
 }
